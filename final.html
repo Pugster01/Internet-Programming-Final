@@ -1,0 +1,73 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="final.css">
+</head>
+
+<body>
+
+<h1>Finally</h1>
+
+<p>If you're reading this, you already successfully checked out the final. Sweet.</p>
+
+<p>Rules and Guidelines</p>
+<ul>
+	<li>You may use any resources except other people and their work from this course. Googling public information is fine. <strong>Using code from other students, including from prior years, is cheating.</strong></li>
+	<li>You <strong>may not</strong> copy and paste code off the internet. Write it yourself, in your own way.</li>
+	<li>If you adapt from public code, cite your source in comments. Just a URL is fine.</li>
+	<li>Commit and push often! <strong>Do not</strong> commit the node_modules folder.</li>
+</ul>
+
+<h2>Setup</h2>
+
+<ol>
+	<li>In this working directory, set up the necessary libraries:
+		<pre>npm init -y</pre>
+		<pre>npm install --save express express-handlebars express-session sqlite3 sequelize</pre>
+	</li>
+	<li>Start the provided server file:
+		<pre>node server.js</pre>
+	</li>
+	<li>Browse to <a href="http://localhost:3002/">http://localhost:3002/</a> and you should get the default route.</li>
+</ol>
+
+<h1>The List</h1>
+
+<p>In the holiday spirit, I decided to make a list of my enemies, so that I don't forget to get them if it's the last thing I do. It's not finished though, so you'll have to help me out.</p>
+
+<h2>Question 1  (10 points)</h2>
+
+<p>View my mockup here: <a href="http://localhost:3002/list">http://localhost:3002/list</a></p>
+
+<p>Starting off server-side, no client-side code here yet. I provided my database, some data, and the generated sequelize models for you. Update <code>server.js</code> and the <code>list.html</code> template to show the real data instead.</p>
+
+<p>As everyone knows, orderliness is next to greatness, so keep the active and...inactive entries separate. It's critical to prioritize one's good work, so make sure the people show up in order (priority 1 gets it first).</p>
+
+<h2>Question 2 (10 points)</h2>
+
+<p>Sometimes the sheer magnitude of my accomplishments tires my eyes, so there's a link at the top of the page to hide the ones that have been dealt with. When clicked, it should reload the page with them excluded and change the link so that I can click it to show them again, if I so desire.</p>
+
+<p>All server-side, no client-side JavaScript.</p>
+
+<h2>Question 3 (10 points)</h2>
+
+<p>Next to each active entry is a "Resolve" button that takes me to another page were I can record my glorious thoughts when someone finally gets what's coming to them. However, it doesn't work yet. I need you to update it to pass the right ID so that it can show the right name. Then, when I submit my frankly gracious epitaph it should post to the server to mark them inactive and store my comment. There's a field for "gloats", which is like "notes" only much more satisfying. Then go back to the list.</p>
+
+<p>All server-side, no client-side JavaScript. And stop asking.</p>
+
+<h2>Question 4 (10 points)</h2>
+
+<p>I have many reasons. Many. Using client-side JavaScript (edit <code>static/list.js</code>), make it so that I can click on the wholly justified reason for any active entry and change it. It should:</p>
+
+<ol>
+	<li>Turn into a textbox when I click it</li>
+	<li>Turn back to text when I finish typing (when I leave the box)</li>
+	<li>Send an AJAX update to the server to store my brilliant new reason</li>
+</ol>
+
+<h2>Bonus Question!</h2>
+
+<p>I don't like to repeat myself. Make it so that when I toggle hiding/showing the inactive entries, that preference sticks.</p>
+
+</body>
+</html>
