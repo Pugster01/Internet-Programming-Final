@@ -42,19 +42,58 @@ app.get('/', (req,res) => {
 // routes for the two pages, mocked up
 // modify these to complete questions
 
-app.get('/list', (req,res) => {
-	res.render('list');
+app.get('/list', async (req,res) => {
+  var list_active = await Entry.findAll({
+    where: {active: 1},
+    order: [["priority", "ASC"]]
+  })
+
+  if(!req.session.toggleInactive) {
+    var list_inactive = await Entry.findAll({
+      where: {active: 0},
+      order: [["priority", "ASC"]]
+    })
+  }
+  else{
+    var list_inactive = []
+  }
+
+	res.render('list', {lista: list_active, listi:list_inactive, active: !req.session.toggleInactive});
 });
 
-app.get('/end', (req,res) => {
-	res.render('end');
+
+app.get('/end/:id', async (req,res) => {
+  var e = await Entry.findByPk(req.params.id)
+  console.log(e)
+	res.render('end', {Entry: e});
 });
 
 //////////////////////////////////////////////////////////////////
 // add additional routes here as needed
 
+app.get('/toggleInactive', (req, res) => {
+  if(req.session.toggleInactive){
+    req.session.toggleInactive = !req.session.toggleInactive
+  }
+  else  {
+   req.session.toggleInactive = true
+  }
+
+  res.redirect("/list")
+})
 
 
+app.post('/gloat/:id', async (req, res) => {
+  await Entry.update({
+    active: 0,
+    gloats: req.body.gloat
+  },
+  {
+    where: { id: req.params.id }
+  });
+
+  res.redirect('/list')
+})
 
 
 //////////////////////////////////////////////////////////////////

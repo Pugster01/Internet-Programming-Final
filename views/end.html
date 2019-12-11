@@ -4,20 +4,24 @@
 	<h1>The List</h1>
 </div>
 
+{{#Entry}}
+
 <div class="row col-10">
-	<h2>Some Guy</h2>
+	<h2>{{name}}</h2>
 </div>
 
 <div class="row col-10">
-	<form action="" method="POST">
+	<form action="/gloat/{{id}}" method="POST">
 	<div class="form-group">
-    	<label for="epitaph"><em>Done with this one</em></label>
+    	<label for="epitaph"><em>{{reason}}</em></label>
     	<textarea type="email" class="form-control" id="gloat" name="gloat" placeholder="Heeheehee"></textarea>
     </div>
 	<a class="btn btn-secondary" href="/list">Cancel</a>
 	<button type="submit" class="btn btn-primary">Record for Posterity and Giggles</button>
 	</form>
 </div>
+
+{{/Entry}}
 
 </body>
 </html>

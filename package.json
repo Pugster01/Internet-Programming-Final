@@ -1,0 +1,28 @@
+{
+  "name": "final-Pugster01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UTRGV-CS-3342/final-Pugster01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UTRGV-CS-3342/final-Pugster01/issues"
+  },
+  "homepage": "https://github.com/UTRGV-CS-3342/final-Pugster01#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "sequelize": "^5.21.2",
+    "sqlite3": "^4.1.1"
+  }
+}

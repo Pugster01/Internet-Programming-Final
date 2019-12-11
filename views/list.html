@@ -5,7 +5,7 @@
 </div>
 
 <div class="row col-10 pb-2 mb-2">
-	<a href=""><em>Hide Inactives</em></a>
+	<a href="/toggleInactive"><em>Hide Inactives</em></a>
 </div>
 
 <div class="row col-10">
@@ -18,32 +18,22 @@
 		<th></th>
 	</tr>
 	</thead>
-
+	{{#lista}}
 	<tbody>
 	<tr>
-		<td>1</td>
-		<td>Some Guy</td>
-		<td class="edit">Annoying</td>
-		<td><a class="btn btn-primary" href="/end">Resolve</a></td>
+		<td>{{priority}}</td>
+		<td>{{name}}</td>
+		<td class="edit">{{reason}}</td>
+		<td><a class="btn btn-primary" href="/end/{{id}}">Resolve</a></td>
 	</tr>
-
-	<tr>
-		<td>2</td>
-		<td>Some Other Person</td>
-		<td class="edit">Their face</td>
-		<td><a class="btn btn-primary" href="/end">Resolve</a></td>
-	</tr>
-
-	<tr>
-		<td>2</td>
-		<td>Some Gal</td>
-		<td class="edit">Probably something</td>
-		<td><a class="btn btn-primary" href="/end">Resolve</a></td>
-	</tr>
+	{{/lista}}
+	
 	</tbody>
 
 	</table>
 </div>
+
+{{#if active}}
 
 <div class="row col-10">
 	<h2>Inactive</h2>
@@ -59,25 +49,21 @@
 		<th>Gloats</th>
 	</tr>
 	</thead>
-
 	<tbody>
+	{{#listi}}
 	<tr>
-		<td>2</td>
-		<td>Testerson</td>
-		<td class="edit">Didn't pass</td>
-		<td>I'm right behind you, Stillwell!</td>
+		<td>{{priority}}</td>
+		<td>{{name}}</td>
+		<td class="edit">{{reason}}</td>
+		<td>{{gloats}}</td>
 	</tr>
-
-	<tr>
-		<td>3</td>
-		<td>Jimminy Cricket</td>
-		<td class="edit">Keeps correcting me</td>
-		<td>Didn't see that coming.</td>
-	</tr>
+	{{/listi}}
 	</tbody>
 
 	</table>
 </div>
+
+{{/if}}
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="/list.js"></script>
