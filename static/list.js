@@ -3,9 +3,10 @@ $(document).ready(function () {
     $(".edit").on("click", function() {
         var text = this.innerText
         this.innerHTML = `<input type="text" value="${text}" autofocus>`
+        this.firstElementChild.select()
     })
 
-    $(".edit").on("change", async function() {
+    $(".edit").focusout(async function() {
         var text = this.firstElementChild.value
         this.innerHTML = text
 
