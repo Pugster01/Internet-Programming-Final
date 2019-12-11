@@ -95,7 +95,16 @@ app.post('/gloat/:id', async (req, res) => {
   res.redirect('/list')
 })
 
+app.post("/editReason", async (req, res) => {
+  await Entry.update({
+    reason: req.body.text
+  },
+  {
+    where: { id: req.body.id }
+  });
 
+  res.status(200).send()
+})
 //////////////////////////////////////////////////////////////////
 
 var server = app.listen(app.get('port'), function() {
